@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+ }
+
+ .bg_color{
+  background: linear-gradient(to right, #0B96A6, #0F5FA6);
+
+ }
+
+
+ html{
+ 
+   scroll-behavior: smooth;
+ }
