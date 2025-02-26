@@ -60,11 +60,9 @@ const Footer = () => {
         </div>
 
         {/* الحقوق */}
-        <div className="border-t border-gray-300 pt-4 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
-          <p>© 2024 جميع الحقوق محفوظة لدى مركز حلول الأعمال للتدريب</p>
-          <p className="text-gray-700">
-            صُنع في <span className="text-yellow-600 font-semibold">CAYAN</span>
-          </p>
+        <div className="border-t border-gray-300 pt-4 text-sm text-gray-500 flex flex-col md:flex-row justify-center items-center">
+          <p>© 2025 جميع الحقوق محفوظة لدى مركز حلول الأعمال للتدريب</p>
+    
         </div>
       </div>
     </footer>
