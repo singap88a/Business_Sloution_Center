@@ -7,19 +7,19 @@ import banner_4 from "../../public/banner_4.png";
 import banner_5 from "../../public/banner_5.png";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay  } from "swiper/modules";
-
-// Import Swiper styles
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
- 
+import { useTranslation } from 'react-i18next';
 
 function Banner() {
+  const { t } = useTranslation();
+  
   const banners = [
-    { icon: banner_1, number: 15, title: "دورة معتمدة" },
-    { icon: banner_2, number: 60, title: "يوم تدريبي معتمد" },
-    { icon: banner_3, number: 216, title: "ساعة معتمدة" },
-    { icon: banner_4, number: 320, title: "دورة تم تنفيذها" },
-    { icon: banner_5, number: 17000, title: "متدرب ومتدربة" },
+    { icon: banner_1, number: 15, titleKey: "banner.certified_courses" },
+    { icon: banner_2, number: 60, titleKey: "banner.training_days" },
+    { icon: banner_3, number: 216, titleKey: "banner.certified_hours" },
+    { icon: banner_4, number: 320, titleKey: "banner.completed_courses" },
+    { icon: banner_5, number: 17000, titleKey: "banner.trainees" },
   ];
 
   const [counts, setCounts] = useState(banners.map(() => 0));
@@ -60,43 +60,43 @@ function Banner() {
     <div className="bg_color py-5" ref={sectionRef}>
       <div className="container text-center">
         <Swiper
-          slidesPerView={2}  
+          slidesPerView={2}
           spaceBetween={30}
           autoplay={{
-            delay: 3000,  
+            delay: 3000,
             disableOnInteraction: false,
           }}
-  
-           breakpoints={{
+          breakpoints={{
             640: {
-              slidesPerView: 2, 
+              slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 3,  
+              slidesPerView: 3,
             },
             1280: {
-              slidesPerView: 5,  
+              slidesPerView: 5,
             },
           }}
-          modules={[Autoplay ]}
+          modules={[Autoplay]}
           className="mySwiper"
-          loop={true}  
-
+          loop={true}
         >
           {banners.map((banner, index) => (
             <SwiperSlide key={index}>
               <div
                 className={`p-3 rounded text-center flex flex-col items-center ${
-                  index !== banners.length - 5 ? " border-r   border-gray-300" : ""
+                  index !== banners.length - 5 ? "border-r border-gray-300" : ""
                 }`}
               >
                 <div className="h-24 w-24 flex items-center bg-[#dbfffc7a] rounded-full justify-center">
-                  <Image src={banner.icon} alt={banner.title} />
+                  <Image src={banner.icon} alt={t(banner.titleKey)} />
                 </div>
                 <h3 className="mb-1 font-bold text-[34px] text-white">
                   +{counts[index]}
                 </h3>
-                <p className="text-muted text-white text-xl">{banner.title}</p>
+                <p className="text-muted text-white text-xl">
+                  {t(banner.titleKey)}
+                </p>
               </div>
             </SwiperSlide>
           ))}

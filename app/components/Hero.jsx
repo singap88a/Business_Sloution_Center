@@ -9,9 +9,12 @@ import hero_3 from "../../public/hero_3.png";
 import hero_4 from "../../public/hero_4.png";
 import hero_5 from "../../public/hero_5.png";
 import hero_6 from "../../public/hero_6.png";
+import { useTranslation } from 'react-i18next';
 
 function Hero() {
-  // تعريف الحركات
+  const { t } = useTranslation();
+
+  // تعريف الحركات (كما هي بدون تغيير)
   const fadeInLeft = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
@@ -112,24 +115,21 @@ function Hero() {
             variants={fadeInLeft}
           >
             <h1 className="text-3xl md:text-6xl font-bold">
-              إختيارك <span className="text-[#0B96A6]">الذكي </span> <br />
-              من أجل مستقبلك <span className="text-[#0B96A6]">المهني</span>
+              {t('hero.title_part1')} <span className="text-[#0B96A6]">{t('hero.title_highlight1')}</span> <br />
+              {t('hero.title_part2')} <span className="text-[#0B96A6]">{t('hero.title_highlight2')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mt-3">
-              كل الدورات التي تحتاجها لكي تبدأ مسارك المهني في منصة واحدة بين
-              يديك كل الدورات التي تحتاجها لكي تبدأ مسارك المهني في منصة واحدة
-              بين يديك كل الدورات التي تحتاجها لكي تبدأ مسارك المهني في منصة
-              واحدة بين يديك
+              {t('hero.description')}
             </p>
             <Link
               href="/"
               className="inline-block bg_color text-white px-6 py-2 mt-4 rounded-full transition"
             >
-              استكشف الدورات
+              {t('hero.explore_button')}
             </Link>
           </motion.div>
 
-          {/* الصورة أو المحتوى الجانبي */}
+          {/* الصورة الرئيسية */}
           <motion.div
             className="w-full md:w-1/2 text-center p-5"
             initial="hidden"
@@ -138,7 +138,7 @@ function Hero() {
             variants={fadeInRight}
           >
             <div className="md:w-[550px] w-full md:h-[430px] h-full">
-              <Image src={hero} alt="Hero" />
+              <Image src={hero} alt={t('hero.main_image_alt')} />
             </div>
           </motion.div>
         </div>

@@ -14,8 +14,10 @@ import {
   FaEnvelope,
   FaBook,
 } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +32,7 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    toast.success("تم إرسال الرسالة بنجاح!", {
+    toast.success(t('contact.success_message'), {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -41,7 +43,7 @@ export default function ContactForm() {
     });
   };
 
-   const fadeInUp = {
+  const fadeInUp = {
     hidden: { opacity: 0, y: 100 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
@@ -52,7 +54,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg_color p-4 md:p-14" id="contact">
+    <div className="bg_color p-4 md:p-14" id="contact" dir="rtl">
       <ToastContainer />
       <div className="container mx-auto">
         <motion.div
@@ -62,14 +64,14 @@ export default function ContactForm() {
           variants={fadeInUp}
           className="bg-white/10 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-lg w-full flex flex-col md:flex-row justify-between items-center"
         >
-           <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               className="text-center text-[#E7F3F2] text-3xl md:text-5xl font-bold"
             >
-              تواصل معنا
+              {t('contact.title')}
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,7 +113,7 @@ export default function ContactForm() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="الاسم"
+                  placeholder={t('contact.name_placeholder')}
                   className="w-full p-3 px-10 bg-white/20 rounded-full text-white placeholder-white outline-none border border-[#104D84]"
                   value={formData.name}
                   onChange={handleChange}
@@ -127,13 +129,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                 >
                   <option value="" className="text-[#104D84]">
-                    اختر الدورة
+                    {t('contact.select_course')}
                   </option>
                   <option value="course1" className="text-[#104D84]">
-                    دورة 1
+                    {t('contact.course1')}
                   </option>
                   <option value="course2" className="text-[#104D84]">
-                    دورة 2
+                    {t('contact.course2')}
                   </option>
                 </select>
               </div>
@@ -144,7 +146,7 @@ export default function ContactForm() {
                 <input
                   type="text"
                   name="phone"
-                  placeholder="رقم الجوال"
+                  placeholder={t('contact.phone_placeholder')}
                   className="w-full p-3 px-10 bg-white/20 rounded-full text-white placeholder-white outline-none border border-[#104D84]"
                   value={formData.phone}
                   onChange={handleChange}
@@ -156,7 +158,7 @@ export default function ContactForm() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="البريد الإلكتروني"
+                  placeholder={t('contact.email_placeholder')}
                   className="w-full p-3 px-10 bg-white/20 rounded-full text-white placeholder-white outline-none border border-[#104D84]"
                   value={formData.email}
                   onChange={handleChange}
@@ -170,7 +172,7 @@ export default function ContactForm() {
               type="submit"
               className="mt-4 p-2 bg-white text-blue-700 rounded-full text-lg font-semibold hover:bg-gray-200"
             >
-              إرسال
+              {t('contact.submit_button')}
             </motion.button>
           </motion.form>
         </motion.div>

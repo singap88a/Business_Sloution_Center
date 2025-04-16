@@ -1,0 +1,120 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "goals": "Our Goals",
+    "courses": "Training Courses",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title_part1": "Your smart",
+    "title_highlight1": "choice",
+    "title_part2": "for your professional",
+    "title_highlight2": "future",
+    "description": "All the courses you need to start your professional path in one platform at your fingertips. All the courses you need to start your professional path in one platform at your fingertips. All the courses you need to start your professional path in one platform at your fingertips.",
+    "explore": "Explore Courses"
+  },
+  "banner": {
+    "certified_courses": "Certified Course",
+    "training_days": "Training Day",
+    "certified_hours": "Certified Hour",
+    "completed_courses": "Completed Course",
+    "trainees": "Trainees"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Business Solutions Training Center was established in 2021, operating under the supervision of the Technical and Vocational Training Corporation, licensed by the National E-Learning Center, and accredited in the financial, administrative, social and personal development fields.",
+    "tagline": "Training - Development - Excellence",
+    "image_alt": "About the center"
+  },
+
+  "certificates": {
+    "section_title": "Why Choose Business Solutions Training",
+    "card1": {
+      "title": "Training Quality",
+      "description": "We focus on practical, career-oriented training content rather than theoretical, helping trainees acquire many skills and experiences"
+    },
+    "card2": {
+      "title": "Certified Certificates",
+      "description": "All courses come with certified certificates and accredited hours from the Technical and Vocational Training Corporation"
+    },
+    "card3": {
+      "title": "Continuous Follow-up",
+      "description": "We always work to ensure trainees gain maximum professional and training benefits through continuous follow-up"
+    }
+  },
+  "goals": {
+    "title": "Our Goals",
+    "goal1": "Providing an outstanding training experience",
+    "goal2": "Developing professional skills for trainees",
+    "goal3": "Maximizing scientific and professional benefits for our clients",
+    "goal4": "Achieving the highest quality standards in all training services",
+    "goal5": "Providing training programs suitable for all administrative specializations",
+    "image_alt": "Our goals image"
+  },
+  "banner2": {
+    "card1": {
+      "title": "Training Quality",
+      "description": "We focus on practical, career-oriented training content rather than theoretical, helping trainees acquire many skills and experiences"
+    },
+    "card2": {
+      "title": "Certified Certificates",
+      "description": "All courses come with certified certificates and accredited hours from the Technical and Vocational Training Corporation"
+    }
+  },
+  "accredited": {
+    "title": "Accredited By",
+    "image_alt": "Accredited logo"
+  },
+  "journey": {
+    "title": "Trainee Journey",
+    "image_alt": "Trainee journey image",
+    "step1": {
+      "title": "Identifying Training Needs",
+      "description": "The trainee identifies the training program or requests assistance for a free training consultation"
+    },
+    "step2": {
+      "title": "Registration and Subscription",
+      "description": "Registration is done through the sales team"
+    },
+    "step3": {
+      "title": "Plan and Follow-up",
+      "description": "The trainee attends training days and can participate, interact, and request consultation from the trainer"
+    },
+    "step4": {
+      "title": "Certification and Evaluation",
+      "description": "The certificate is issued within 48 hours after the training program ends and can be received through the Manar platform"
+    }
+  },
+  "courses": {
+    "section_title": "Training Courses",
+    "course1": {
+      "title": "Human Resources Management Course"
+    },
+    "hours": "{{count}} training hours",
+    "days": "{{count}} training days",
+    "register_button": "Register Now"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name_placeholder": "Name",
+    "phone_placeholder": "Phone Number",
+    "email_placeholder": "Email",
+    "select_course": "Select Course",
+    "course1": "Course 1",
+    "course2": "Course 2",
+    "submit_button": "Submit",
+    "success_message": "Message sent successfully!"
+  },
+  "footer": {
+    "logo_alt": "Website logo",
+    "links": {
+      "home": "Home",
+      "about": "About Us",
+      "goals": "Our Goals",
+      "courses": "Training Courses",
+      "contact": "Contact Us"
+    },
+    "copyright": "© 2025 All Rights Reserved to Business Solutions Training Center"
+  }
+}

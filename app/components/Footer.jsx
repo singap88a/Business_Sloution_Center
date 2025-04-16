@@ -9,15 +9,18 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa6";
 import logo from "../../public/logo.png";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   // بيانات القائمة
   const links = [
-    { text: "الرئيسية", href: "#" },
-    { text: "تعرف علينا", href: "#" },
-    { text: "أهدافنا", href: "#" },
-    { text: "الدورات التدريبية", href: "#" },
-    { text: "تواصل معنا", href: "#" },
+    { textKey: "footer.links.home", href: "#" },
+    { textKey: "footer.links.about", href: "#" },
+    { textKey: "footer.links.goals", href: "#" },
+    { textKey: "footer.links.courses", href: "#" },
+    { textKey: "footer.links.contact", href: "#" },
   ];
 
   // بيانات الأيقونات
@@ -30,16 +33,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#f5fcff] text-gray-700 py-8">
+    <footer className="bg-[#f5fcff] text-gray-700 py-8" dir="rtl">
       <div className="container mx-auto px-4 text-center">
         {/* الشعار والقائمة */}
         <div className="flex flex-col items-center space-y-4">
-          <Image src={logo} alt="Logo" className="w-16 h-16" />
+          <Image src={logo} alt={t('footer.logo_alt')} className="w-16 h-16" />
           <ul className="flex flex-wrap justify-center gap-4 md:gap-12 text-sm md:text-base font-medium">
             {links.map((link, index) => (
               <li key={index}>
                 <a href={link.href} className="hover:text-[#3998f0] font-semibold text-xl">
-                  {link.text}
+                  {t(link.textKey)}
                 </a>
               </li>
             ))}
@@ -61,8 +64,7 @@ const Footer = () => {
 
         {/* الحقوق */}
         <div className="border-t border-gray-300 pt-4 text-sm text-gray-500 flex flex-col md:flex-row justify-center items-center">
-          <p>© 2025 جميع الحقوق محفوظة لدى مركز حلول الأعمال للتدريب</p>
-    
+          <p>{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

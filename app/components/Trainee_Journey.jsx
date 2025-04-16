@@ -3,35 +3,34 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Trainee_Journey_1 from "../../public/Trainee_Journey_1.png";
 import Image from "next/image";
-
-const steps = [
-  {
-    title: "التعرف على الحاجات التدريبية",
-    description:
-      "يقوم المتدرب بتحديد البرنامج التدريبي أو طلب المساعدة لتقديم استشارة تدريبية مجانا",
-    active: false,
-  },
-  {
-    title: "التسجيل والاشتراك",
-    description: "يتم التسجيل والإشتراك من خلال فريق المبيعات",
-    active: false,
-  },
-  {
-    title: "الخطة والمتابعة",
-    description:
-      "يقوم المتدرب بحضور الأيام التدريبية ويمكنه المشاركة والتفاعل وطلب الاستشارة من المدرب",
-    active: true,
-  },
-  {
-    title: "إصدار الشهادات والتقييم",
-    description:
-      "يتم اصدار الشهادة بعد 48 ساعة من نهاية البرنامج التدريبي ويتك استلامها من خلال منصة منار",
-    active: false,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Trainee_Journey = () => {
+  const { t } = useTranslation();
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const steps = [
+    {
+      titleKey: "journey.step1.title",
+      descriptionKey: "journey.step1.description",
+      active: false,
+    },
+    {
+      titleKey: "journey.step2.title",
+      descriptionKey: "journey.step2.description",
+      active: false,
+    },
+    {
+      titleKey: "journey.step3.title",
+      descriptionKey: "journey.step3.description",
+      active: true,
+    },
+    {
+      titleKey: "journey.step4.title",
+      descriptionKey: "journey.step4.description",
+      active: false,
+    },
+  ];
 
   // تعريف الحركات
   const fadeInUp = {
@@ -40,10 +39,10 @@ const Trainee_Journey = () => {
   };
 
   return (
-    <div className="bg_color py-20 relative">
+    <div className="bg_color py-20 relative" dir="rtl"> {/* إضافة dir="rtl" ثابتة */}
       {/* الصورة الخلفية */}
       <div className="absolute top-24 left-0 md:flex hidden opacity-50 hover:opacity-100 transition duration-300">
-        <Image src={Trainee_Journey_1} alt="Trainee Journey" />
+        <Image src={Trainee_Journey_1} alt={t('journey.image_alt')} />
       </div>
 
       {/* المحتوى الرئيسي */}
@@ -55,7 +54,7 @@ const Trainee_Journey = () => {
           variants={fadeInUp}
           className="text-3xl md:text-5xl text-white font-bold mb-10"
         >
-          رحلة المتدرب
+          {t('journey.title')}
         </motion.h2>
 
         <div className="relative w-full flex flex-col">
@@ -65,7 +64,7 @@ const Trainee_Journey = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="relative flex flex-col md:flex-row items-center my-6 group"
+              className="relative flex flex-col md:flex-row items-center my-6 group text-start"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               initial="hidden"
@@ -82,23 +81,23 @@ const Trainee_Journey = () => {
               ></div>
 
               {/* النص */}
-              <div className="w-full flex flex-col md:flex-row md:text-start text-center">
+              <div className="w-full flex flex-col md:flex-row md:text-right text-right "> {/* تغيير text-start إلى text-right */}
                 <div
                   className={`w-full md:w-1/3 transition-all ${
                     index % 2 === 0 ? "order-1" : "order-2"
                   }`}
                 >
-                  <h3 className="text-xl md:text-2xl font-bold cursor-pointer group-hover:text-[#2FF8FF] text-[#C1C1C1]">
-                    {step.title}
+                  <h3 className="text-xl md:text-[22px] font-bold cursor-pointer group-hover:text-[#2FF8FF] text-[#C1C1C1] ">
+                    {t(step.titleKey)}
                   </h3>
                 </div>
 
                 <div
-                  className={`w-full md:w-2/3 md:absolute md:right-[30%]   text-lg md:text-2xl text-[#C1C1C1] transition-all   group-hover:text-white  md:p-0 p-5 ${
+                  className={`w-full md:w-2/3 md:absolute md:right-[30%] text-lg md:text-2xl text-[#C1C1C1] transition-all group-hover:text-white md:p-0 p-5 ${
                     index % 1 === 0 ? "order-2" : "order-1"
                   }`}
                 >
-                  {step.description}
+                  {t(step.descriptionKey)}
                 </div>
               </div>
             </motion.div>

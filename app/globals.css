@@ -6,6 +6,8 @@ body {
   direction: rtl;
   text-align: right;
   font-family: 'Tajawal', sans-serif;
+  direction: var(--direction);
+  /* text-align: var(--direction)  'rtl' ? right : left; */
 }
 
 .container {
@@ -26,3 +28,17 @@ body {
  *{
   font-family: MadaniArabic-SemiBold;
  }
+
+
+ /* globals.css */
+:root {
+  --direction: ltr;
+}
+
+[dir="rtl"] {
+  --direction: rtl;
+}
+
+ 
+
+/* Add any other RTL-specific styles here */
